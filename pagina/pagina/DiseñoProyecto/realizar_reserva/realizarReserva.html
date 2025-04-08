@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Reserva</title>
+    
+    <link rel="stylesheet" href="C:\Users\juanm\Downloads\pagina-20250407T044441Z-001\pagina\pagina\DiseñoProyecto\realizar_reserva\css\reserva_completa.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generar Reserva en el Hotel</h1>
+        <form id="reserva-completa-form">
+            <h2>Datos Generales</h2>
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="documento">Número de Documento</label>
+            <input type="text" id="documento" name="documento" required>
+
+            <label for="telefono">Número de Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="tipoReserva">Tipo de Reserva</label>
+            <select id="tipoReserva" name="tipoReserva" required>
+                <option value="">Selecciona un tipo de reserva</option>
+                <option value="habitacion">Habitación</option>
+                <option value="espacio">Espacio</option>
+                <option value="evento">Evento</option>
+            </select>
+
+<button type="button" id="volver-btn" class="oculto">Volver</button>
+
+            <button type="button" id="continuar-btn">Continuar</button>
+
+            <div id="reserva-habitacion" class="oculto">
+                <h2>Reserva de Habitación</h2>
+                <label for="tipoHabitacion">Tipo de Habitación</label>
+                <select id="tipoHabitacion" name="tipoHabitacion">
+                    <option value="">Selecciona un tipo de habitación</option>
+                    <option value="individual">Individual</option>
+                    <option value="doble">Doble</option>
+                    <option value="suite">Suite</option>
+                </select>
+
+                <label for="checkin">Fecha de Check-in</label>
+                <input type="date" id="checkin" name="checkin">
+
+                <label for="checkout">Fecha de Check-out</label>
+                <input type="date" id="checkout" name="checkout">
+
+                <label for="numHuespedes">Número de Huéspedes</label>
+                <input type="number" id="numHuespedes" name="numHuespedes" min="1">
+            </div>
+
+            <div id="reserva-espacio" class="oculto">
+                <h2>Reserva de Espacios</h2>
+                <label for="espacio">Espacio a Reservar</label>
+                <select id="espacio" name="espacio">
+                    <option value="">Selecciona un espacio</option>
+                    <option value="recepcion">Recepción</option>
+                    <option value="piscina">Piscina</option>
+                    <option value="restaurante">Restaurante</option>
+                    <option value="gimnasio">Gimnasio</option>
+                    <option value="salaReuniones">Sala de Reuniones</option>
+                </select>
+
+                <label for="fechaEspacio">Fecha de Reserva del Espacio</label>
+                <input type="date" id="fechaEspacio" name="fechaEspacio">
+
+                <label for="horaEspacio">Hora de Reserva del Espacio</label>
+                <input type="time" id="horaEspacio" name="horaEspacio">
+
+                <label for="capacidad">Capacidad</label>
+                <input type="number" id="capacidad" name="capacidad" min="1">
+            </div>
+
+            <div id="reserva-evento" class="oculto">
+                <h2>Reserva de Eventos</h2>
+                <label for="nombreEvento">Nombre del Evento</label>
+                <input type="text" id="nombreEvento" name="nombreEvento">
+
+                <label for="nombreOrganizador">Nombre del Organizador</label>
+                <input type="text" id="nombreOrganizador" name="nombreOrganizador">
+
+                <label for="emailOrganizador">Correo Electrónico del Organizador</label>
+                <input type="email" id="emailOrganizador" name="emailOrganizador">
+
+                <label for="telefonoOrganizador">Teléfono del Organizador</label>
+                <input type="tel" id="telefonoOrganizador" name="telefonoOrganizador">
+
+                <label for="fechaEvento">Fecha del Evento</label>
+                <input type="date" id="fechaEvento" name="fechaEvento">
+
+                <label for="horaEvento">Hora del Evento</label>
+                <input type="time" id="horaEvento" name="horaEvento">
+
+                <label for="numAsistentes">Número de Asistentes</label>
+                <input type="number" id="numAsistentes" name="numAsistentes" min="1">
+
+                <label for="espacioEvento">Espacio del Evento</label>
+                <select id="espacioEvento" name="espacioEvento">
+                    <option value="">Selecciona un espacio</option>
+                    <option value="recepcion">Recepción</option>
+                    <option value="piscina">Piscina</option>
+                    <option value="restaurante">Restaurante</option>
+                    <option value="gimnasio">Gimnasio</option>
+                    <option value="salaReuniones">Sala de Reuniones</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submit-btn" class="oculto">Generar Reserva</button>
+            <div id="mensaje" class="oculto"></div>
+        </form>
+    </div>
+
+    <script src="js/reserva_completa.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Eventos</title>
+    <link rel="stylesheet" href="pagina/pagina/calendario/calen.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calendario de Eventos</h1>
+
+        <!-- Próximos Eventos -->
+        <div class="eventos">
+            <div class="evento">
+                <img src="https://via.placeholder.com/120" alt="Evento 1">
+                <div class="descripcion">
+                    <h3>Conferencia de Tecnología</h3>
+                    <p>Únete a nosotros para explorar las últimas tendencias en tecnología.</p>
+                    <button class="btn" onclick="asistir('evento1')">Quiero asistir</button>
+                    <span id="evento1-status"></span>
+                </div>
+            </div>
+
+            <div class="evento">
+                <img src="https://via.placeholder.com/120" alt="Evento 2">
+                <div class="descripcion">
+                    <h3>Seminario de Marketing Digital</h3>
+                    <p>Aprende las mejores estrategias para llevar tu negocio al siguiente nivel.</p>
+                    <button class="btn" onclick="asistir('evento2')">Quiero asistir</button>
+                    <span id="evento2-status"></span>
+                </div>
+            </div>
+
+            <div class="evento">
+                <img src="https://via.placeholder.com/120" alt="Evento 3">
+                <div class="descripcion">
+                    <h3>Exposición de Arte</h3>
+                    <p>Admira las obras de artistas locales e internacionales.</p>
+                    <button class="btn" onclick="asistir('evento3')">Quiero asistir</button>
+                    <span id="evento3-status"></span>
+                </div>
+            </div>
+
+            <div class="evento">
+                <img src="https://via.placeholder.com/120" alt="Evento 4">
+                <div class="descripcion">
+                    <h3>Cena de Gala</h3>
+                    <p>Disfruta de una noche exclusiva con cena gourmet y entretenimiento.</p>
+                    <button class="btn" onclick="asistir('evento4')">Quiero asistir</button>
+                    <span id="evento4-status"></span>
+                </div>
+            </div>
+
+            <div class="evento">
+                <img src="https://via.placeholder.com/120" alt="Evento 5">
+                <div class="descripcion">
+                    <h3>Reunión Corporativa</h3>
+                    <p>Un espacio para discutir las últimas estrategias empresariales.</p>
+                    <button class="btn" onclick="asistir('evento5')">Quiero asistir</button>
+                    <span id="evento5-status"></span>
+                </div>
+            </div>
+
+            <div class="evento">
+                <img src="https://via.placeholder.com/120" alt="Evento 6">
+                <div class="descripcion">
+                    <h3>Concierto en Vivo</h3>
+                    <p>Disfruta de una noche llena de música en vivo.</p>
+                    <button class="btn" onclick="asistir('evento6')">Quiero asistir</button>
+                    <span id="evento6-status"></span>
+                </div>
+            </div>
+
+            <div class="evento">
+                <img src="https://via.placeholder.com/120" alt="Evento 7">
+                <div class="descripcion">
+                    <h3>Convención Empresarial</h3>
+                    <p>Conéctate con otros profesionales y comparte ideas innovadoras.</p>
+                    <button class="btn" onclick="asistir('evento7')">Quiero asistir</button>
+                    <span id="evento7-status"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Eventos Previos -->
+        <div class="eventos-previos">
+            <div class="evento-previo">
+                <img src="https://via.placeholder.com/120" alt="Evento Previos 1">
+                <div class="descripcion">
+                    <h3>Evento Anterior 1</h3>
+                    <p>Un resumen del evento pasado y cómo fue su experiencia.</p>
+                    <div class="stars" id="stars-previo1">
+                        <span class="star" onclick="calificar('previo1', 1)">★</span>
+                        <span class="star" onclick="calificar('previo1', 2)">★</span>
+                        <span class="star" onclick="calificar('previo1', 3)">★</span>
+                        <span class="star" onclick="calificar('previo1', 4)">★</span>
+                        <span class="star" onclick="calificar('previo1', 5)">★</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="evento-previo">
+                <img src="https://via.placeholder.com/120" alt="Evento Previos 2">
+                <div class="descripcion">
+                    <h3>Evento Anterior 2</h3>
+                    <p>Un resumen del evento pasado y cómo fue su experiencia.</p>
+                    <div class="stars" id="stars-previo2">
+                        <span class="star" onclick="calificar('previo2', 1)">★</span>
+                        <span class="star" onclick="calificar('previo2', 2)">★</span>
+                        <span class="star" onclick="calificar('previo2', 3)">★</span>
+                        <span class="star" onclick="calificar('previo2', 4)">★</span>
+                        <span class="star" onclick="calificar('previo2', 5)">★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/reserva.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #5d3b2e;
+}
+
+.evento, .evento-previo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.evento img, .evento-previo img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.descripcion {
+    flex-grow: 1;
+}
+
+.descripcion h3 {
+    margin: 0;
+    color: #333;
+}
+
+.descripcion p {
+    color: #666;
+}
+
+.btn {
+    background-color: #5d3b2e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8e5a46;
+}
+
+.stars {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.star {
+    font-size: 20px;
+    color: #ffd700;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.star.selected {
+    color: #f39c12;
+}
+
+.evento-previo {
+    background-color: #e0e0e0;
+}
+
+.eventos-previos {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,124 @@
+body {
+    background-color: #1c1c1c; /* Fondo morado oscuro */
+    color: #DAA520; /* Texto dorado */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 500px;
+    padding: 20px;
+    background-color: #502c4a; /* Fondo morado */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+button#guardar-btn {
+    background-color: #DAA520; /* Fondo dorado */
+    color: #502c4a; /* Texto morado */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#guardar-btn:hover {
+    background-color: #502c4a; /* Fondo morado al hacer hover */
+    color: #DAA520; /* Texto dorado al hacer hover */
+}
+
+.profile-photo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+input[type="file"] {
+    display: block;
+    max-width: 400px;
+    margin: 10px auto;
+    font-size: 15px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #2a2a72;
+}
+
+input[type="file"]:focus {
+    outline: none;
+    border-color: #1e1e5a;
+    box-shadow: 0 0 5px rgba(42, 42, 114, 0.5);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.editable-field {
+    display: flex;
+    align-items: center;
+}
+
+.editable-field input {
+    flex: 1;
+}
+
+.edit-btn {
+    background-color: #DAA520; /* Fondo dorado */
+    color: #502c4a; /* Texto morado */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: #502c4a; /* Fondo morado al hacer hover */
+    color: #DAA520; /* Texto dorado al hacer hover */
+}

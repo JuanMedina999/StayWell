@@ -1,0 +1,72 @@
+/* Contenedor general que usa Flexbox para distribuir los elementos */
+.container {
+    display: flex;
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #2c3e50;
+    color: white;
+    padding-top: 20px;
+    z-index: 1; /* Se asegura de que esté encima del contenido */
+}
+
+.sidebar-header {
+    text-align: center;
+}
+
+.profile-img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 10px;
+    border-bottom: 1px solid #34495e;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sub-menu {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.sub-menu.visible {
+    display: block;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 250px; /* Espacio dejado por la barra lateral */
+    width: 75%; /* Asegura que ocupe el 75% del ancho */
+    padding: 20px;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+    background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+/* Estilos adicionales */
+.error-message {
+    color: red;
+    padding: 10px;
+}
+
+.wave {
+    height: 100px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
+}

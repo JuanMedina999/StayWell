@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="C:\Users\juanm\Downloads\pagina-20250407T044441Z-001\pagina\editarperfil\css\one.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Perfil de Usuario</h1>
+            <button id="guardar-btn">Guardar Cambios</button>
+        </header>
+        <form id="editar-perfil-form">
+            <div class="profile-photo">
+                <img src="D:\proyecto\Diseño Proyecto\pagina\editarperfil\enblanco.png" alt="Foto de perfil" class="profile-img" id="foto-perfil">
+                <input type="file" id="cambiar-foto" name="cambiar-foto" accept="image/*">
+            </div>
+
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" value="Dabvhy" required disabled>
+
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" value="NN" required disabled>
+
+            <label for="apodo">Apodo</label>
+            <input type="text" id="apodo" name="apodo" value="Dabvhy123">
+
+            <label for="correo">Correo Electrónico</label>
+            <div class="editable-field">
+                <input type="email" id="correo" name="correo" value="dabvhy@example.com" required disabled>
+                <button type="button" class="edit-btn" onclick="toggleEdit('correo')">Editar</button>
+            </div>
+
+            <label for="telefono">Número de Teléfono</label>
+            <div class="editable-field">
+                <input type="tel" id="telefono" name="telefono" value="123-456-7890" required disabled>
+                <button type="button" class="edit-btn" onclick="toggleEdit('telefono')">Editar</button>
+            </div>
+
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" name="descripcion" rows="3"
+                required>Gestor de eventos con pasión por la organización y la creatividad.</textarea>
+
+            <label for="fecha-nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" value="2001-12-19" required disabled>
+
+            <label for="descripcion-misma">Descripción de Sí Mismo</label>
+            <textarea id="descripcion-misma" name="descripcion-misma" rows="3"
+                required>Amante de los viajes y las nuevas experiencias. Siempre buscando aprender y crecer.</textarea>
+        </form>
+    </div>
+    <script src="D:\proyecto\Diseño Proyecto\pagina\editarperfil\js\perfilone.js"></script>
+</body>
+
+</html>

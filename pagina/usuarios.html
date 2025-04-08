@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Great Viaggio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/diseño.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+</head>
+
+<body>
+
+
+
+  <div class="container-fluid">
+    <!--Formulario de inicio de sesión -->
+    <div class="login-section">
+      <div class="logo mb-4 text-center">
+        <img src="img/logo.png" alt="Logo">
+      </div>
+      <form id="login-form">
+        <input type="text" id="username" class="form-control mb-3" placeholder="USUARIO" required>
+        <input type="password" id="password" class="form-control mb-3" placeholder="CONTRASEÑA" required>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="stay-connected">
+          <label class="form-check-label" for="stay-connected">PERMANECER CONECTADO</label>
+        </div>
+        <div class="notification" id="notification">Datos incorrectos. Por favor, intenta nuevamente.</div>
+        <button type="button" id="login-btn" class="btn btn-primary w-100 mb-2">Ingresar</button>
+        <button type="button" id="register-btn" class="btn btn-secondary w-100" data-bs-toggle="modal"
+          data-bs-target="#registerModal">Registrarme</button>
+        <div class="mt-3 text-center">
+          <a href="#forgot-password-modal" data-bs-toggle="modal" data-bs-target="#forgot-password-modal"
+            id="forgot-password-link">¿Olvidó su contraseña?</a>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- Modal para registro de usuarios -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Registro de Usuario</h5>
+            <button type="button" class="btn-close btn-close-custom" data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="register-form">
+              <div class="mb-3 row">
+                <div class="col-md-4">
+                  <label for="document-type" class="form-label">Tipo de Documento</label>
+                  <select id="document-type" class="form-select" required>
+                    <option value="CC">CC</option>
+                    <option value="CE">CE</option>
+                    <option value="PA">PA</option>
+                  </select>
+                </div>
+                <div class="col-md-8">
+                  <label for="document-number" class="form-label">Número de Documento</label>
+                  <input type="text" id="document-number" class="form-control"
+                    placeholder="Ingrese su numero de documento" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="first-name" class="form-label">Nombre</label>
+                <input type="text" id="first-name" class="form-control" placeholder="Ingrese su primer nombre" required>
+              </div>
+              <div class="mb-3">
+                <label for="last-name" class="form-label">Apellido</label>
+                <input type="text" id="last-name" class="form-control" placeholder="Ingrese su primer apellido"
+                  required>
+              </div>
+              <div class="mb-3">
+                <label for="phone-number" class="form-label">Número de Teléfono</label>
+                <input type="text" id="phone-number" class="form-control" placeholder="Ingrese su numero de telefono"
+                  required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" id="email" class="form-control" placeholder="Ingrese su email" required>
+              </div>
+              <div class="mb-3">
+                <label for="birth-date" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" id="birth-date" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="password-register" class="form-label">Contraseña</label>
+                <input type="password" id="password-register" class="form-control"
+                  placeholder="¿que contraseña desea asignar?" required>
+              </div>
+              <button type="button" class="btn btn-success w-100" id="create-account-btn">Crear Cuenta</button>
+            </form>
+            <p id="notification-message" class="mt-3 text-center text-success d-none">¡Cuenta creada correctamente!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="volver-btn" data-bs-dismiss="modal">Ya tengo
+              cuenta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para la recuperación de contraseña -->
+    <div class="modal fade" id="forgot-password-modal" tabindex="-1" aria-labelledby="forgot-password-modal-label"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="forgot-password-modal-label">Recuperación de Contraseña</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="forgot-password-form">
+
+              <div class="mb-3">
+                <label for="document-number" class="form-label">Número de Documento</label>
+                <input type="text" class="form-control" id="document-number"
+                  placeholder="Ingrese su número de documento" required>
+              </div>
+
+
+              <div class="mb-3">
+                <label for="forgot-email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="forgot-email" placeholder="Ingrese su correo electrónico"
+                  required>
+              </div>
+
+
+              <div class="mb-3">
+                <label for="forgot-phone" class="form-label">Número de Teléfono</label>
+                <input type="tel" class="form-control" id="forgot-phone" placeholder="Ingrese su número de teléfono"
+                  required>
+              </div>
+
+              <button type="submit" class="btn btn-custom w-100">Enviar</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-custom-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="title-container">
+      <div class="title">Bienvenido al Hotel</div>
+      <div class="title">Great Viaggio </div>
+      <div class="subtitle">Espacios Disponibles</div>
+    </div>
+
+
+    <div class="center">
+      <div class="carousel-container"> <!-- Previsualización de miniaturas -->
+        <div class="thumbnails"> 
+          <img src="img/reuniones.jpg" alt="Reuniones" onclick="showImage(0)"> 
+          <img src="img/spa.jpg" alt="Spa" onclick="showImage(1)"> 
+          <img src="img/gym.jpg" alt="Gym" onclick="showImage(2)">
+          <img src="img/piscina.jpg" alt="Piscina" onclick="showImage(3)">
+          <img src="img/bar.jpg" alt="Piscina" onclick="showImage(4)">
+          <img src="img/restaurante.jpg" alt="Piscina" onclick="showImage(5)">
+          <img src="img/recepcion.jpg" alt="Piscina" onclick="showImage(6)">
+          <img src="img/coliseo.jpg" alt="Piscina" onclick="showImage(7)">
+        </div> <!-- Imagen principal -->
+        <div class="main-image-container"> <img id="main-image" src="img/reuniones.jpg" alt="Imagen principal">
+          <div class="description-scroll" id="image-description"></div>
+          <div class="navigation">
+            <button class="arrow" onclick="changeImage(-1)">&#10094;</button>
+            <button class="arrow" onclick="changeImage(1)">&#10095;</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">¿Quiénes Somos?</h1>
+      <p class="text-center">
+        En nuestro hotel, traemos un pedacito de Italia a Colombia, fusionando la calidez y hospitalidad italianas con la riqueza cultural y la belleza natural de este país. <br>
+        Nos enorgullece ofrecer una experiencia única que combina la elegancia del diseño italiano, el sabor auténtico de su gastronomía y un servicio excepcional que  <br>
+        hace sentir a cada huésped como en casa.<br>
+      </p>
+      <p class="text-center">
+        Ubicados en un entorno privilegiado, nuestro hotel es el lugar ideal para quienes buscan confort, estilo y una atención al detalle que refleja la pasión italiana por <br>
+        la excelencia. Ya sea que viaje por placer o negocios, estamos comprometidos a hacer de su estadía una experiencia inolvidable.
+      </p>
+      <p class="text-center">
+        Bienvenidos a un rincón de Italia en Colombia.
+      </p>
+    
+    
+    
+
+      <div class="image-gallery secondary-gallery d-flex justify-content-center flex-wrap">
+        <!-- Reserva de Habitaciones -->
+        <div>
+          <a href="javascript:void(0);" id="habitaciones-link">
+            <img src="img/Habitaciones.jpg" alt="Reserva de Habitaciones">
+            <p class="image-gallery-title">Reserva de Habitaciones</p>
+          </a>
+        </div>
+
+        <!-- Reserva de Espacios -->
+        <div>
+          <a href="javascript:void(0);" id="espacios-link">
+            <img src="img/coliseo.jpg" alt="Reserva de Espacios">
+            <p class="image-gallery-title">Reserva de Espacios</p>
+          </a>
+        </div>
+
+        <!-- Reserva de Eventos -->
+        <div>
+          <a href="javascript:void(0);" id="eventos-link">
+            <img src="img/Eventos.jpg" alt="Reserva de Eventos">
+            <p class="image-gallery-title">Reserva de Eventos</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Modal de confirmación para iniciar sesión o registrarse -->
+      <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="accountModalLabel">¿Ya tienes cuenta?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <p>Para continuar con la reserva, ¿quieres registrarte o iniciar sesión?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-custom w-100" data-bs-toggle="modal" data-bs-target="#registerModal"
+                data-bs-dismiss="modal">Registrarme</button>
+              <button type="button" class="btn btn-custom w-100" data-bs-toggle="modal" data-bs-target="#loginModal"
+                data-bs-dismiss="modal">Iniciar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Modal de Inicio de Sesión -->
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <form id="login-form">
+                <input type="text" id="username" class="form-control mb-3" placeholder="USUARIO" required>
+                <input type="password" id="password" class="form-control mb-3" placeholder="CONTRASEÑA" required>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="stay-connected">
+                  <label class="form-check-label" for="stay-connected">PERMANECER CONECTADO</label>
+                </div>
+                <button type="button" id="login-btn" class="btn btn-primary w-100 mb-2">Ingresar</button>
+                <button type="button" id="register-btn" class="btn btn-secondary w-100" data-bs-toggle="modal"
+                  data-bs-target="#registerModal">Registrarme</button>
+
+                <!-- Contenedor para el mensaje de error -->
+                <div id="error-message" class="text-danger text-center mt-2" style="display: none;">Usuario o contraseña
+                  incorrectos</div>
+                <div class="mt-3 text-center">
+                  <a href="#forgot-password-modal" data-bs-toggle="modal" data-bs-target="#forgot-password-modal"
+                    id="forgot-password-link">¿Olvidó su contraseña?</a>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Modal de confirmación para iniciar sesión o registrarse -->
+      <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="accountModalLabel">¿Ya tienes cuenta?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <p>Para continuar con la reserva, ¿quieres registrarte o iniciar sesión?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal"
+                data-bs-dismiss="modal">Registrarme</button>
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#loginModal"
+                data-bs-dismiss="modal">Iniciar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <footer class="footer text-center mt-5">
+        <div class="social-media">
+          <a href="#" target="_blank">Facebook</a>| |
+          <a href="#" target="_blank">Instagram</a>| |
+          <a href="#" target="_blank">Twitter</a>
+        </div>
+        <div class="legal-info mt-3">
+          <p>© 2024 Hotel Grant Viggio. Todos los derechos reservados.</p>
+          <p>Política de privacidad | Términos y condiciones</p>
+        </div>
+    </div>
+
+
+    <div id="error-404" class="error-page" style="display: none;">
+      <h2>Error 404</h2>
+      <p>La página que estás buscando no se ha encontrado.</p>
+      <a href="usuarios.html" class="btn btn-primary">Volver al inicio</a>
+    </div>
+
+    <div id="error-500" class="error-page" style="display: none;">
+      <h2>Error 500</h2>
+      <p>Ha ocurrido un error en el servidor. Por favor, inténtalo más tarde.</p>
+      <a href="usuarios.html" class="btn btn-primary">Volver al inicio</a>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+      <script>
+        // Script para abrir el modal de cuenta cuando se hace click en cualquiera de los enlaces de reservas
+        const accountLinks = ["habitaciones-link", "espacios-link", "eventos-link"];
+        accountLinks.forEach((id) => {
+          document.getElementById(id).addEventListener("click", function () {
+            var accountModal = new bootstrap.Modal(document.getElementById("accountModal"));
+            accountModal.show();
+          });
+        });
+
+        // Lógica para mostrar notificación al crear cuenta
+        document.addEventListener("DOMContentLoaded", function () {
+          const createAccountBtn = document.getElementById("create-account-btn");
+          const notificationMessage = document.getElementById("notification-message");
+
+          createAccountBtn.addEventListener("click", () => {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password-register").value;
+            notificationMessage.classList.remove("d-none", "text-danger", "text-success");
+
+            if (email.includes("@") && password.length >= 6) {
+              notificationMessage.style.color = "rgb(239, 184, 16)";
+              notificationMessage.textContent = "¡Cuenta creada correctamente!";
+            } else {
+              notificationMessage.style.color = "rgb(95, 15, 102)";
+              notificationMessage.textContent = "Por favor, revise los datos ingresados.";
+            }
+
+            notificationMessage.classList.remove("d-none");
+          });
+        });
+
+      </script>
+
+
+
+
+
+
+      <script>
+        // Obtener los elementos necesarios
+        const loginBtn = document.getElementById("login-btn");
+        const notification = document.getElementById("notification");
+
+        // Función para simular la validación de datos (esto debería ser tu lógica de validación real)
+        function validateData(username, password) {
+          // Simulamos que el usuario y contraseña correctos son 'usuario' y 'contraseña'
+          if (username === "usuario" && password === "12345") {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        // Función para mostrar la notificación de error
+        function showNotification() {
+          notification.classList.add("visible");  // Muestra la notificación
+          setTimeout(() => {
+            notification.classList.remove("visible");  // La oculta después de 3 segundos
+          }, 3000);  // 3000 ms = 3 segundos
+        }
+
+        // Evento de clic para el botón de login
+        loginBtn.addEventListener("click", (event) => {
+          event.preventDefault();  // Evitar que el formulario se envíe (comportamiento por defecto)
+
+          // Obtener los valores de los campos de usuario y contraseña
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          if (!validateData(username, password)) {
+            showNotification();
+          } else {
+            window.location.href = "dashboard.html";
+          }
+        });
+
+
+      </script>
+
+
+
+
+
+      <script>
+        // Función para mostrar la página de error
+        function showError(errorCode) {
+          document.getElementById('error-404').style.display = 'none';
+          document.getElementById('error-500').style.display = 'none';
+
+          if (errorCode === 404) {
+            document.getElementById('error-404').style.display = 'block';
+          } else if (errorCode === 500) {
+            document.getElementById('error-500').style.display = 'block';
+          }
+        }
+      </script>
+
+
+    </div>
+
+
+
+
+    <script>
+      let currentIndex = 0;
+    
+      const images = [
+        {
+          src: "img/reuniones.jpg",
+          description: "<h2 style='font-size: 1.5rem;'>SALA DE REUNIONES</h2>El Hotel Great Viaggio tiene dos salas de reuniones para eventos corporativos<br>y cuenta con equipamiento audiovisual de última generación.<br>También ofrece servicios de traducción y secretariado,<br>así como café y snacks."
+        },
+        {
+          src: "img/spa.jpg",
+          description: "<h2 style='font-size: 1.5rem;'>SPA</h2>El Spa del Hotel Great Viaggio es un lugar que ofrece tratamientos de relajación<br>y cuidado personal para mejorar el bienestar físico y mental de los clientes.<br>Los spas de hotel pueden incluir una variedad de servicios."
+        },
+        {
+          src: "img/gym.jpg",
+          description: "<h2 style='font-size: 1.5rem;'>GYM</h2>Espacio de entrenamiento y bienestar físico y mental que los huéspedes <br> pueden usar para mantener su rutina de ejercicios mientras viajan."
+        },
+        {
+          src: "img/piscina.jpg",
+          description: "<h2 style='font-size: 1.5rem;'>PISCINA</h2>Espacio recreativo que se utiliza para el baño,<br>la natación, o otros deportes acuáticos."
+        },
+        {
+          src: "img/bar.jpg",
+          description: "<h2 style='font-size: 1.5rem;'>BAR</h2>Lugar donde los huéspedes pueden relajarse, socializar y entretenerse,mientras disfrutan <br> de bebidas alcohólicas o no.Es un punto de encuentro  popular <br>para los huéspedes que buscan un ambiente relajado <br> y un cóctel preparado por expertos."
+        },
+        {
+          src: "img/Restaurante.jpg",
+          description: "<h2 style='font-size: 1.5rem;'>RESTAURANTE</h2>Bienvenidos al Restaurante ubicado dentro del prestigioso hotel Great Viaggio.Este restaurante <br> de cinco estrellas es el epítome del lujo y la sofisticación,donde cada detalle <br> ha sido diseñado para ofrecer una experiencia gastronómica inolvidable."
+        },
+        {
+          src: "img/Recepcion.jpg",
+          description: "<h2 style='font-size: 1.5rem;'>RECEPCION</h2>La recepción del hotel Great Viaggio es el preludio perfecto a una estancia de lujo <br> inigualable.Desde el instante en que cruzas nuestras puertas,te envuelve <br> un ambiente de elegancia y hospitalidad que marca el comienzo <br> de una experiencia memorable."
+        },
+        {
+          src: "img/coliseo.jpg",
+          description: "<h2 style='font-size: 1.5rem;'>COLISEO</h2>En el corazón del hotel Great Viaggio se encuentra nuestro majestuoso Coliseo,<br>un espacio dedicado a eventos, entretenimiento y experiencias inolvidables.<br>Este anfiteatro moderno combina la grandeza de la arquitectura clásica<br>con las comodidades de la tecnología de vanguardia."
+        }
+      ];
+    
+      function showImage(index) {
+        currentIndex = index;
+        const mainImage = document.getElementById("main-image");
+        const description = document.getElementById("image-description");
+        mainImage.src = images[index].src;
+        description.innerHTML = images[index].description; // Usar innerHTML para interpretar HTML
+      }
+    
+      function changeImage(direction) {
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        showImage(currentIndex);
+      }
+    
+      document.addEventListener("DOMContentLoaded", () => {
+        showImage(0);
+      });
+    </script>
+    
+    
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+/* Fondo con animación de olas */
+@keyframes wave {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #FFFFFF, #f5deb3, #bb98b5, #f5deb3, #FFFFFF);
+    background-size: 200% 100%; 
+    animation: wave 15s linear infinite; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 500px;
+    padding: 60px;
+    background-color: #ffffff; /* Fondo morado para el contenedor */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(214, 117, 218, 0.3); /* Sombra para darle profundidad */
+}
+
+.container h1, .container h2 {
+    text-align: center;
+    color: #DAA520; /* Color dorado para los títulos */
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    color: #DAA520; /* Color dorado para los labels */
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #DAA520; /* Borde dorado para los inputs */
+    border-radius: 5px;
+    background-color: #502c4a; /* Fondo gris oscuro para los inputs */
+    color: #ffffff; /* Texto blanco para los inputs */
+}
+
+input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="tel"]::placeholder, input[type="date"]::placeholder, input[type="time"]::placeholder, input[type="number"]::placeholder {
+    color: #DAA520; /* Color dorado para los placeholders */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #502c4a; /* Fondo dorado para los botones */
+    color: #DAA520; /* Texto morado para los botones */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para los cambios de color */
+}
+
+button:hover {
+    background-color: #DAA520; /* Fondo morado al hacer hover */
+    color: #502c4a /* Texto dorado al hacer hover */
+}
+
+button:disabled {
+    background-color: #555; /* Fondo gris para los botones deshabilitados */
+    cursor: not-allowed;
+}
+
+.oculto {
+    display: none;
+}
+#mensaje {
+    margin-top: 20px;
+    font-size: 16px;
+}
+#mensaje p {
+    margin: 0;
+}
+
+#mensaje {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Alineación centrada para el mensaje */
+}
+
+#mensaje.oculto {
+    display: none;
+}
+
+#mensaje.exito {
+    background-color: #28a745; /* Fondo verde para el mensaje de éxito */
+    color: #fff;
+}
+
+#mensaje.error {
+    background-color: #dc3545; /* Fondo rojo para el mensaje de error */
+    color: #fff;
+}
